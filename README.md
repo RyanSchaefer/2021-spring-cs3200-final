@@ -7,24 +7,26 @@ Team #21 (Sections 4 and 3)
 
 # Team Members:
 Ryan Schaefer S3 #21
+
 Alisa Possner S4 #21
+
 Moe Suzuki S4 #21
 
 # Description
 Our implementation of the project is a tracker for F1 races, teams, and driver. Our porject meets the requirements with the following relationships:
 
 - User data model 
-- - Driver
+  - Driver
 - Domain Object data models:
-- - Team
-- - Race
+  - Team
+  - Race
 - Relationships
-- - One To Many
-- - - Team to Driver
-- - Many to Many
-- - - Driver to Race (through standing reification)
+  - One To Many
+    - Team to Driver
+  - Many to Many
+    - Driver to Race (through standing reification)
 - Portable Enumeration
-- - Finishing Type (drivers can finish, not start, or not finish)
+  - Finishing Type (drivers can finish, not start, or not finish)
 
 # UML Class Diagram
 
