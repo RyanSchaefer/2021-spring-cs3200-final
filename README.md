@@ -20,9 +20,11 @@ Our implementation of the project is a tracker for F1 races, teams, and driver. 
 - Domain Object data models:
   - Team
   - Race
+  - Employee
 - Relationships
   - One To Many
     - Team to Driver
+    - Team to Employee
   - Many to Many
     - Driver to Race (through standing reification)
 - Portable Enumeration
@@ -42,13 +44,15 @@ Team - represents a team that an F1 driver can be part of with a budget and a CE
 
 Race - represents a race that is held with an official title for that race, a location of the race (the country), the track in that country, and the number of laps in the race
 
+Employee - Represents anyone who is working in F1 besides the drivers
+
 # User to domain object relationship
 
 Team <-> Driver - a driver is part of one team, but a team can have many drivers (normally 2 with any additional considered reserve)
 
 # Domain to Domain object relationship
 
-Team <-> Race (through user intermediary) - The relationship between the two domain objects is found by going through the team to the driver to the standing of a driver in a race. While not directly related, we can still say that a team has many races in which they finish in a certian place based on the overall preformance of their drivers.
+Team <-> Employee - a team has many employees (which aren't drivers because drivers are considered special) that work on the car, in the pitlane, and also as engineers.
 
 # Portable Enumeration
 
