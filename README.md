@@ -32,7 +32,7 @@ Our implementation of the project is a tracker for F1 races, teams, and driver. 
 
 # UML Class Diagram
 
-[our UML diagram](./db_design_final_project_UML.pdf)
+[our UML diagram](Deliverables/db_design_final_project_UML.pdf)
 
 # User Data Model
 
