@@ -1,18 +1,36 @@
 package com.example.springtemplate.models;
 
+
 import javax.persistence.*;
 
 @Entity
 public class FinishType {
 
-    enum FinishTypeEnum {
+    public enum FinishTypeEnum {
         DNS, DNF, F
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private FinishTypeEnum name;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public FinishTypeEnum getName() {
+        return name;
+    }
+
+    public void setName(FinishTypeEnum name) {
+        this.name = name;
+    }
 
 }

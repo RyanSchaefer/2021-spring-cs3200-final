@@ -2,7 +2,6 @@ package com.example.springtemplate.daos;
 
 import com.example.springtemplate.models.Driver;
 import com.example.springtemplate.models.Standing;
-import com.example.springtemplate.repositories.DriverRepository;
 import com.example.springtemplate.repositories.StandingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

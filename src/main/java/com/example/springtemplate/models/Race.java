@@ -17,7 +17,6 @@ public class Race {
     private int laps;
 
     @OneToMany(mappedBy = "race")
-    @JsonIgnore
     private List<Standing> standings;
 
     public int getId() {

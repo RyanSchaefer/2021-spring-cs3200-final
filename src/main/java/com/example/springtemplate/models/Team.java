@@ -19,7 +19,6 @@ public class Team {
     private Integer budget;
     private String ceo;
     @Column(columnDefinition="tinyint(1) default 1")
-    private Boolean online;
 
     @OneToMany(mappedBy = "team")
     @JsonIgnore

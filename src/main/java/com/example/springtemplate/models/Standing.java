@@ -15,6 +15,7 @@ public class Standing {
     private int qualified;
     private int position;
 
+    @Id
     @ManyToOne
     @PrimaryKeyJoinColumn(
             name="race_id",
@@ -22,6 +23,8 @@ public class Standing {
     )
     @JsonIgnore
     private Race race;
+
+    @Id
     @ManyToOne
     @PrimaryKeyJoinColumn(
             name="driver_id",
@@ -30,8 +33,8 @@ public class Standing {
     @JsonIgnore
     private Driver driver;
 
-    @Id
-    private FinishType.FinishTypeEnum finished_type_id;
+    @OneToOne
+    private FinishType finished_type;
 
     public int getId() {
         return id;
@@ -73,11 +76,11 @@ public class Standing {
         this.driver = driver;
     }
 
-    public FinishType.FinishTypeEnum getFinished_type_id() {
-        return finished_type_id;
+    public FinishType getFinished_type() {
+        return finished_type;
     }
 
-    public void setFinished_type_id(FinishType.FinishTypeEnum finished_type_id) {
-        this.finished_type_id = finished_type_id;
+    public void setFinished_type(FinishType finished_type) {
+        this.finished_type = finished_type;
     }
 }

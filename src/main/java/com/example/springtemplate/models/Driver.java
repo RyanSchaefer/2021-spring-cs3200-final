@@ -13,11 +13,8 @@ public class Driver {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "firstName")
     private String firstName;
-    @Column(name = "lastName")
     private String lastName;
-    @Column(name = "userName")
     private String userName;
     private String password;
     private String email;
