@@ -29,7 +29,7 @@ public class RaceOrmDao {
         return raceRepository.findById(id).get();
     }
 
-    @PutMapping("/api/update/races/{raceId}")
+    @PutMapping("/api/races/{raceId}")
     public Race updateRace(
             @PathVariable("raceId") Integer id,
             @RequestBody Race newRace) {

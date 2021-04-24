@@ -12,3 +12,20 @@ Accept: application/json
 ###
 GET http://localhost:8080/api/standings
 Accept: application/json
+
+###
+POST http://localhost:8080/api/drivers
+Content-Type: application/json
+
+{
+  "firstName": "ryan",
+  "lastName": "schaefer",
+  "userName": "ryan",
+  "password": "henlo",
+  "email": "@@@.com",
+  "dob": "2000-03-07"
+}
+###
+
+PUT http://localhost:8080/api/update/drivers/3/teams/1
+###

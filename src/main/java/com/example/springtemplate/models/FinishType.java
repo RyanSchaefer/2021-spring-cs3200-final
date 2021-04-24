@@ -17,14 +17,6 @@ public class FinishType {
     @Enumerated(EnumType.STRING)
     private FinishTypeEnum name;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public FinishTypeEnum getName() {
         return name;
     }

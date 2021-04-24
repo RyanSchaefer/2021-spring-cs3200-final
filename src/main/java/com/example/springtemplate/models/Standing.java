@@ -1,6 +1,7 @@
 package com.example.springtemplate.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.web.bind.annotation.Mapping;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +15,12 @@ public class Standing {
     private int id;
     private int qualified;
     private int position;
+    @Id
+    @Column(insertable = false, updatable = false)
+    private int race_id;
+    @Id
+    @Column(insertable = false, updatable = false)
+    private int driver_id;
 
     @Id
     @ManyToOne
@@ -82,5 +89,21 @@ public class Standing {
 
     public void setFinished_type(FinishType finished_type) {
         this.finished_type = finished_type;
+    }
+
+    public int getRace_id() {
+        return race_id;
+    }
+
+    public void setRace_id(int race_id) {
+        this.race_id = race_id;
+    }
+
+    public int getDriver_id() {
+        return driver_id;
+    }
+
+    public void setDriver_id(int driver_id) {
+        this.driver_id = driver_id;
     }
 }

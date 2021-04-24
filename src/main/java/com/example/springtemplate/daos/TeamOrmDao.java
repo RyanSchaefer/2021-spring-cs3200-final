@@ -29,7 +29,7 @@ public class TeamOrmDao {
         return teamRepository.findById(id).get();
     }
 
-    @PutMapping("/api/update/teams/{teamId}")
+    @PutMapping("/api/teams/{teamId}")
     public Team updateTeam(
             @PathVariable("teamId") Integer id,
             @RequestBody Team newTeam) {

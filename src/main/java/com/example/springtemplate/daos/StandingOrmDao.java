@@ -30,7 +30,7 @@ public class StandingOrmDao {
         return standingRepository.findById(id).get();
     }
 
-    @PutMapping("/api/update/standings/{standingId}")
+    @PutMapping("/api/standings/{standingId}")
     public Standing updateStandings(
             @PathVariable("standingId") Integer id,
             @RequestBody Standing newStanding) {
