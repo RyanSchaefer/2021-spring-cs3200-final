@@ -40,8 +40,11 @@ public class EmployeeOrmDao {
             @PathVariable("id") Integer id,
             @RequestBody Employee newEmployee) {
         Employee employee = this.findEmployeeById(id);
-        employeeRepository.deleteById(employee.getId());
-        newEmployee.setId(employee.getId());
+        employee.setTeam(newEmployee.getTeam());
+        employee.setHired(newEmployee.getHired());
+        employee.setName(newEmployee.getName());
+        employee.setRole(newEmployee.getRole());
+        employee.setSalary(newEmployee.getSalary());
         return employeeRepository.save(newEmployee);
     }
 

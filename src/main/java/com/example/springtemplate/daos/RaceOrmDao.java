@@ -34,7 +34,9 @@ public class RaceOrmDao {
             @PathVariable("raceId") Integer id,
             @RequestBody Race newRace) {
         Race race = this.findRaceById(id);
-        raceRepository.deleteById(race.getId());
+        race.setLaps(newRace.getLaps());
+        race.setLocation(newRace.getLocation());
+        race.setTrack(newRace.getLocation());
         return raceRepository.save(newRace);
     }
 

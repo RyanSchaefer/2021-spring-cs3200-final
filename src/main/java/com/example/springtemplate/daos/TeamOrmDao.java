@@ -34,7 +34,9 @@ public class TeamOrmDao {
             @PathVariable("teamId") Integer id,
             @RequestBody Team newTeam) {
         Team team = this.findTeamById(id);
-        teamRepository.deleteById(team.getId());
+        team.setName(newTeam.getName());
+        team.setBudget(newTeam.getBudget());
+        team.setCeo(newTeam.getCeo());
         return teamRepository.save(newTeam);
     }
 

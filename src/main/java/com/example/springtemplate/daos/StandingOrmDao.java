@@ -35,7 +35,10 @@ public class StandingOrmDao {
             @PathVariable("standingId") Integer id,
             @RequestBody Standing newStanding) {
         Standing standing = this.findStandingById(id);
-        standingRepository.deleteById(standing.getId());
+        standing.setDriver(newStanding.getDriver());
+        standing.setPosition(newStanding.getPosition());
+        standing.setQualified(newStanding.getQualified());
+        standing.setRace(newStanding.getRace());
         return standingRepository.save(newStanding);
     }
 

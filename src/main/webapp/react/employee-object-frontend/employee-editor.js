@@ -1,7 +1,7 @@
 import employeeService from "./employee-service"
 import teamService from "../team-object-frontend/team-service"
 const {useState, useEffect} = React;
-const {useParams, useHistory} = window.ReactRouterDOM;
+const {useParams, useHistory, Link} = window.ReactRouterDOM;
 
 const EmployeeFormEditor = () => {
     const {id} = useParams()
@@ -23,6 +23,13 @@ const EmployeeFormEditor = () => {
             .then(() => history.back())
     return (
         <div>
+            { user.team &&
+            <Link to={`/teams/${user.team.id}`}>
+                {user.team.name},
+                {user.team.ceo},
+                {user.team.budget}
+            </Link>
+            }
             <h2>Employee Editor</h2>
             <label>Id</label>
             <input className="form-control"

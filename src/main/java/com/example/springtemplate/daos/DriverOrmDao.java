@@ -40,7 +40,13 @@ public class DriverOrmDao {
             @PathVariable("driverId") Integer id,
             @RequestBody Driver newDriver) {
         Driver driver = this.findDriverById(id);
-        driverRepository.deleteById(driver.getId());
+        driver.setTeam(newDriver.getTeam());
+        driver.setDob(newDriver.getDob());
+        driver.setEmail(newDriver.getEmail());
+        driver.setPassword(newDriver.getPassword());
+        driver.setFirstName(newDriver.getFirstName());
+        driver.setLastName(newDriver.getLastName());
+        driver.setUserName(newDriver.getUserName());
         return driverRepository.save(newDriver);
     }
 

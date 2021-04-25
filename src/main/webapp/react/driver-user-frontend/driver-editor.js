@@ -1,7 +1,7 @@
 import driversService from "./driver-service"
 import teamService from "../team-object-frontend/team-service"
 const {useState, useEffect} = React;
-const {useParams, useHistory} = window.ReactRouterDOM;
+const {useParams, useHistory, Link} = window.ReactRouterDOM;
 
 const DriverFormEditor = () => {
     const {id} = useParams()
@@ -24,6 +24,13 @@ const DriverFormEditor = () => {
             .then(() => history.back())
     return (
         <div>
+            { user.team &&
+            <Link to={`/teams/${user.team.id}`}>
+                {user.team.name},
+                {user.team.ceo},
+                {user.team.budget}
+            </Link>
+            }
             <h2>Driver Editor</h2>
             <label>Id</label>
             <input className="form-control"
